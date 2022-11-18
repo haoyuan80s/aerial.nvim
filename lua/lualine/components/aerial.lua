@@ -89,7 +89,7 @@ function M:format_status(symbols, depth, separator, icons_enabled, colored)
       if colored then
         icon = self:format_hl(self.highlight_groups[symbol.kind].icon) .. icon
       end
-      table.insert(parts, string.format("%s %s", icon, name))
+      table.insert(parts, string.format("%s%s", icon, name))
     else
       table.insert(parts, name)
     end
@@ -150,7 +150,7 @@ function M:get_status_dense()
     if self.options.colored then
       icon = self:format_hl(self.highlight_groups[symbol.kind].icon) .. icon
     end
-    status = string.format("%s %s", icon, status)
+    status = string.format("%s%s", icon, status)
   end
   return status
 end
